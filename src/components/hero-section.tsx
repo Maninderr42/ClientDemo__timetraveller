@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
+import { useNavigate } from "react-router-dom";
 
 const videos = [
   "https://res.cloudinary.com/dxvxef0yr/video/upload/f_auto,q_auto/v1756657218/94982-644694712_medium_fglftj.mp4",
@@ -10,6 +11,7 @@ const videos = [
 
 export const HeroSection: React.FC = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
+  const navigate = useNavigate();
 
   // Auto switch every 10s
   useEffect(() => {
@@ -19,6 +21,11 @@ export const HeroSection: React.FC = () => {
 
     return () => clearTimeout(timer);
   }, [currentVideo]);
+
+  // Function to navigate to experiences page
+  const navigateToExperiences = () => {
+    navigate('/experiences');
+  };
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
@@ -54,7 +61,11 @@ export const HeroSection: React.FC = () => {
         </h2>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <Button className="orange-button text-sm md:text-base" disableRipple>
+          <Button 
+            className="orange-button text-sm md:text-base" 
+            disableRipple
+            onClick={navigateToExperiences}
+          >
             YOU CHOOSE, WE PLAN
           </Button>
           <Button className="orange-button text-sm md:text-base" disableRipple>

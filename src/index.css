@@ -50,3 +50,14 @@ body {
   background-color: #F57C00;
   transform: translateY(-2px);
 }
+
+/* Add styles for package cards */
+.package-card-shadow {
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.package-card-shadow:hover {
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
