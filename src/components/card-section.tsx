@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
-import image1 from "../Assets/India Map with City Name.jpg";
+import image1 from "../Assets/Screenshot 2025-09-06 104457.png";
 
 interface TravelCard {
   id: number;
@@ -141,7 +141,7 @@ export const CardSection: React.FC = () => {
       }}
     >
       {/* Overlay to improve readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/10"></div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-20 py-16 md:py-20">
