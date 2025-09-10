@@ -6,7 +6,6 @@ import { OffersPage } from "./pages/OffersPage";
 import { ContactPage } from "./pages/ContactPage";
 import { Navbar } from "./components/navbar";
 import { ReferenceHomePage } from "./components/ReferenceHomePage";
-import ExperiencePage from "./pages/ExperiencePage";
 
 export default function App() {
   return (
@@ -19,7 +18,6 @@ export default function App() {
           <Route path="/destinations" element={<DestinationsPage />} />
           <Route path="/offers" element={<OffersPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/experiences" element={<ExperiencePage />} />
         </Routes>
       </div>
     </Router>
