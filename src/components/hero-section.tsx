@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
+import { IndiaDestinations } from "./IndiaDestinations";
+
 
 const videos = [
   "https://res.cloudinary.com/dxvxef0yr/video/upload/f_auto,q_auto/v1756657218/94982-644694712_medium_fglftj.mp4",
