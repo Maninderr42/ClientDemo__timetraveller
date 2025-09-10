@@ -15,7 +15,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-3">
             <Link to="/" className="flex items-center gap-2">
               <span className="inline-block h-8 w-8 rounded-full bg-orange-500" />
-              <span className="text-lg font-semibold">TravelGo</span>
+              <span className="text-lg font-semibold">Time Traveller</span>
             </Link>
           </div>
 
