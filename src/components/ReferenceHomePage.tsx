@@ -3,6 +3,9 @@ import { HeroSection } from "./hero-section";
 import { IndiaDestinations } from "./IndiaDestinations";
 import { TwoColumnSection } from "./two-column-section";
 import { HomeDestinations } from "../pages/HomeDestinations";
+import { AdventureToursSection } from "../pages/AdventureSection";
+import { HeroBookingSection } from "../pages/HeroBookingSection";
+
 // import ExperiencePage from "../pages/ExperiencePage";
 
 export interface ReferenceHomePageProps {
@@ -20,6 +23,8 @@ export function ReferenceHomePage({ onPageChange }: ReferenceHomePageProps) {
       <HeroSection />
       <TwoColumnSection />
       <HomeDestinations/>
+      <AdventureToursSection />
+      <HeroBookingSection />
       {/* <ExperiencePage /> */}
 
       {/* India Destinations Carousel */}

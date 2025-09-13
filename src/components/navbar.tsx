@@ -52,14 +52,7 @@ export const Navbar: React.FC = () => {
             >
               Contact Us
             </NavLink>
-            <div className="relative group">
-              <button className={`${baseLink} ${inactiveLink}`}>More</button>
-              <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute right-0 mt-2 w-44 rounded-md border bg-white shadow-lg">
-                <Link to="/experiences" className="block px-4 py-2 text-sm hover:bg-gray-100">Experiences</Link>
-                <Link to="/" className="block px-4 py-2 text-sm hover:bg-gray-100">Blog</Link>
-                <Link to="/" className="block px-4 py-2 text-sm hover:bg-gray-100">Support</Link>
-              </div>
-            </div>
+            
           </div>
 
           {/* Right-aligned CTA */}

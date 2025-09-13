@@ -1,7 +1,15 @@
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
-import { Star, MapPin, Clock, Users, Camera } from "lucide-react";
+import { motion } from 'framer-motion';
+
+import {
+  Star,
+  MapPin,
+  Clock,
+  Users,
+  
+} from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 const destinations = [
@@ -17,7 +25,8 @@ const destinations = [
     price: "$2,299",
     highlights: ["Geirangerfjord", "Northern Lights", "Midnight Sun", "Traditional Villages"],
     difficulty: "Moderate",
-    bestTime: "May - September"
+    bestTime: "May - September",
+    category: "Mountains"
   },
   {
     id: 2,
@@ -31,7 +40,8 @@ const destinations = [
     price: "$3,199",
     highlights: ["Torres del Paine", "Perito Moreno Glacier", "Fitz Roy", "Wildlife Safari"],
     difficulty: "Challenging",
-    bestTime: "October - April"
+    bestTime: "October - April",
+    category: "Adventure"
   },
   {
     id: 3,
@@ -45,7 +55,8 @@ const destinations = [
     price: "$2,899",
     highlights: ["Everest Base Camp", "Ancient Monasteries", "Sherpa Culture", "Mountain Views"],
     difficulty: "Challenging",
-    bestTime: "March - May, Sept - Nov"
+    bestTime: "March - May, Sept - Nov",
+    category: "Spiritual"
   },
   {
     id: 4,
@@ -59,7 +70,8 @@ const destinations = [
     price: "$1,999",
     highlights: ["Aurora Borealis", "Geysers", "Volcanic Landscapes", "Blue Lagoon"],
     difficulty: "Easy",
-    bestTime: "September - March"
+    bestTime: "September - March",
+    category: "Adventure"
   },
   {
     id: 5,
@@ -73,7 +85,8 @@ const destinations = [
     price: "$1,599",
     highlights: ["Via Ferrata", "Mountain Huts", "Alpine Lakes", "Local Cuisine"],
     difficulty: "Moderate",
-    bestTime: "June - September"
+    bestTime: "June - September",
+    category: "Mountains"
   },
   {
     id: 6,
@@ -87,15 +100,23 @@ const destinations = [
     price: "$1,299",
     highlights: ["Isle of Skye", "Loch Ness", "Highland Games", "Whisky Distilleries"],
     difficulty: "Easy",
-    bestTime: "May - September"
+    bestTime: "May - September",
+    category: "Cultural"
   }
 ];
 
 export function HomeDestinations() {
+  const scrollToBookingSection = () => {
+    const bookingSection = document.getElementById('online-booking-section');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="ml-20 mr-20 min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="relative h-96 flex items-center justify-center overflow-hidden">
+      <div className="ml-10 mr-10 rounded-3xl relative h-90 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1718719373382-f76913974aeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMHZhbGxleSUyMGxhbmRzY2FwZXxlbnwxfHx8fDE3NTcxMjEwNTd8MA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -104,7 +125,7 @@ export function HomeDestinations() {
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        
+
         <div className="relative z-10 text-center text-white">
           <h1 className="text-5xl font-bold mb-4">Epic Destinations</h1>
           <p className="text-xl max-w-2xl mx-auto">
@@ -113,23 +134,33 @@ export function HomeDestinations() {
         </div>
       </div>
 
-      {/* Filters Section */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-wrap gap-4 justify-center mb-8">
-          <Button variant="outline" className="border-orange-500 text-orange-600 hover:bg-orange-50">
-            All Destinations
-          </Button>
-          <Button variant="outline">Mountains</Button>
-          <Button variant="outline">Cultural</Button>
-          <Button variant="outline">Adventure</Button>
-          <Button variant="outline">Wildlife</Button>
-          <Button variant="outline">Spiritual</Button>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-16 mt-10"
+      >
+        <div className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-2xl font-medium text-sm tracking-wide shadow-lg mb-6">
+        EXPLORE INCREDIBLE INDIA
         </div>
+        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Choose Your Perfect
+          <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent"> Adventure</span>
+        </h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          Discover handpicked destinations with exclusive deals and unforgettable experiences
+        </p>
+      </motion.div>
 
-        {/* Destinations Grid */}
+      {/* Destinations Grid */}
+      <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {destinations.map((destination) => (
-            <Card key={destination.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
+            <Card
+              key={destination.id}
+              className="overflow-hidden hover:shadow-xl transition-all duration-300 group"
+            >
               <div className="relative overflow-hidden">
                 <ImageWithFallback
                   src={destination.image}
@@ -156,27 +187,28 @@ export function HomeDestinations() {
                     <MapPin className="h-4 w-4 mr-1" />
                     <span className="text-sm">{destination.country}</span>
                   </div>
-                  <p className="text-sm text-muted-foreground">{destination.description}</p>
-                </div>
-
-                <div className="space-y-3 mb-4">
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center">
                       <Clock className="h-4 w-4 mr-1 text-muted-foreground" />
                       <span>{destination.duration}</span>
                     </div>
-                    <div className="flex items-center">
-                      <Users className="h-4 w-4 mr-1 text-muted-foreground" />
-                      <span>{destination.reviews} reviews</span>
-                    </div>
-                  </div>
-                  
-                  <div className="text-sm">
-                    <span className="font-medium">Best time:</span> {destination.bestTime}
-                  </div>
+                 
                 </div>
 
-                <div className="mb-4">
+                <div className="space-y-3 mb-4">
+                 
+                <p className="text-sm text-muted-foreground mt-3">
+                    {destination.description}
+                  </p>
+                  </div>
+
+                  {/* <div className="text-sm">
+                    <span className="font-medium">Best time:</span>{" "}
+                    {destination.bestTime}
+                  </div> */}
+                </div>
+
+                {/* <div className="mb-4">
                   <h4 className="text-sm font-medium mb-2">Highlights:</h4>
                   <div className="flex flex-wrap gap-1">
                     {destination.highlights.slice(0, 3).map((highlight, index) => (
@@ -190,16 +222,20 @@ export function HomeDestinations() {
                       </Badge>
                     )}
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-center justify-between pt-4 border-t">
                   <div>
-                    <div className="text-2xl font-bold text-orange-600">{destination.price}</div>
+                    <div className="text-2xl font-bold text-orange-600">
+                      {destination.price}
+                    </div>
                     <div className="text-xs text-muted-foreground">per person</div>
                   </div>
-                  <Button className="bg-orange-500 hover:bg-orange-600">
-                    <Camera className="h-4 w-4 mr-2" />
-                    Explore
+                  <Button 
+                    onClick={scrollToBookingSection}
+                    className="bg-orange-500 hover:bg-orange-600"
+                  >
+                    Book Now
                   </Button>
                 </div>
               </CardContent>

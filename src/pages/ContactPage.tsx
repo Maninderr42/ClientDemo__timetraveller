@@ -8,9 +8,7 @@ import {
   Globe, 
   Send, 
   MessageCircle,
-  Headphones,
-  Calendar,
-  Users
+  Calendar
 } from "lucide-react";
 import { Badge } from "../components/ui/badge";
 import { CardContent } from "../components/ui/card";
@@ -58,16 +56,19 @@ export function ContactPage() {
   ];
 
   return (
-    <div id="contact-page" className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-cyan-50">
+    <div id="contact-page" className="pl-20 pr-20 min-h-screen bg-gradient-to-br from-orange-50 via-white to-cyan-50">
       <div id="contact-container" className="container mx-auto px-4 py-16">
         {/* Header */}
         <div id="contact-header" className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Let's Plan Your Dream Journey
+            Start Your Journey
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
             Every great adventure starts with a conversation. Tell us your travel dreams,
             and our expert maestros will craft an unforgettable experience just for you.
+          </p>
+          <p className="text-lg text-orange-600 font-medium">
+            Let's Plan Your Dream Journey Together
           </p>
         </div>
 
@@ -95,12 +96,12 @@ export function ContactPage() {
           {/* Contact Form */}
           <div id="contact-form-section">
             <Card id="contact-form-card" className="shadow-lg">
-              <CardHeader id="contact-form-header">
-                <h2 className="text-2xl flex items-center font-semibold">
+            <CardHeader id="contact-form-header" className="flex flex-col items-center mt-4">
+            <h2 className="text-3xl flex items-center font-semibold">
                   <Send className="h-6 w-6 mr-2 text-orange-500" />
                   Start Your Journey
                 </h2>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground mt-1">
                   Tell us about your travel dreams and we'll craft the perfect experience for you.
                 </p>
               </CardHeader>
@@ -256,6 +257,27 @@ export function ContactPage() {
             </Card>
           </div>
         </div>
+
+        {/* Map Section (Responsive India Map) */}
+              {/* Map Section (Responsive Balanced Zoom India Map - More Upward) */}
+              <div id="map-section" className="mt-16">
+          <Card className="shadow-lg overflow-hidden">
+            <CardContent className="p-0">
+              <div className="relative w-full h-64 md:h-96 lg:h-[500px]">
+                <iframe
+                  title="India Office Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24364734.58276598!2d60.0!3d05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f7!3m3!1m2!1s0x30635ff7daee152d%3A0x64f1c9e4a6938319!2sIndia!5e0!3m2!1sen!2sin!4v1694530483439!5m2!1sen!2sin"
+                  className="absolute top-0 left-0 w-full h-full"
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+
 
        <div className="mt-16 text-center bg-muted/30 rounded-2xl p-8">
           <h2 className="text-2xl font-bold mb-4">24/7 Support</h2>

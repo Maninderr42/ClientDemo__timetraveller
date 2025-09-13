@@ -24,9 +24,17 @@ export const HeroSection: React.FC = () => {
     return () => clearTimeout(timer);
   }, [currentVideo]);
 
-  // Function to navigate to experiences page
-  const navigateToExperiences = () => {
-    navigate('/experiences');
+  // Function to scroll to adventure section
+  const scrollToAdventureSection = () => {
+    const adventureSection = document.getElementById('adventure-section');
+    if (adventureSection) {
+      adventureSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Function to navigate to destinations page
+  const navigateToDestinations = () => {
+    navigate('/destinations');
   };
 
   return (
@@ -63,16 +71,21 @@ export const HeroSection: React.FC = () => {
         </h2>
 
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <Button 
+        <Button 
             className="orange-button text-sm md:text-base" 
             disableRipple
-            onClick={navigateToExperiences}
+            onClick={navigateToDestinations}
           >
-            YOU CHOOSE, WE PLAN
-          </Button>
-          <Button className="orange-button text-sm md:text-base" disableRipple>
             WE PLAN, YOU CHOOSE
           </Button>
+           <Button 
+             className="orange-button text-sm md:text-base" 
+             disableRipple
+             onClick={scrollToAdventureSection}
+           >
+             YOU CHOOSE, WE PLAN
+           </Button>
+          
         </div>
       </div>
     </section>
