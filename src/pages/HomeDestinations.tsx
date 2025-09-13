@@ -172,12 +172,12 @@ export function HomeDestinations() {
                     {destination.difficulty}
                   </Badge>
                 </div>
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-lg px-2 py-1">
+                {/* <div className="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-lg px-2 py-1">
                   <div className="flex items-center space-x-1">
                     <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                     <span className="text-sm font-medium">{destination.rating}</span>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <CardContent className="p-6">

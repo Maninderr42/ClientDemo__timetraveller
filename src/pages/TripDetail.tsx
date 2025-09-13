@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, px } from 'framer-motion';
 import { MapPin, Clock, DollarSign, Users, Star, Share, Heart, Camera, Check, X } from 'lucide-react';
 
 // Lightweight inline image popup to avoid missing import errors
@@ -137,7 +137,7 @@ export function TripDetailPage() {
   ];
 
   return (
-    <div className="min-h-screen pt-20 bg-gray-50">
+    <div className="min-h-screen pt-20 bg-gray-50"  style={{ paddingTop: "0px" }}>
       
       {/* Header Section */}
       <section className="bg-white shadow-sm">
@@ -154,18 +154,18 @@ export function TripDetailPage() {
               </motion.h1>
               
               <div className="flex items-center gap-6 text-sm text-gray-600 mb-4">
-                <div className="flex items-center gap-1">
+                {/* <div className="flex items-center gap-1">
                   <Star className="w-4 h-4 text-yellow-400 fill-current" />
                   <span className="font-medium">4.8 (269)</span>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-1">
                   <MapPin className="w-4 h-4 text-gray-400" />
                   <span>Phi Phi Islands, Thailand</span>
                 </div>
-                <div className="flex items-center gap-1">
+                {/* <div className="flex items-center gap-1">
                   <Users className="w-4 h-4 text-gray-400" />
                   <span>30K+ booked</span>
-                </div>
+                </div> */}
               </div>
             </div>
             
@@ -178,14 +178,14 @@ export function TripDetailPage() {
                 <Share className="w-4 h-4 text-gray-600" />
                 Share
               </motion.button>
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors"
               >
                 <Heart className="w-4 h-4 text-gray-600" />
                 Wishlist
-              </motion.button>
+              </motion.button> */}
             </div>
           </div>
         </div>
